@@ -1,6 +1,6 @@
 ---
 - name: install git
-  yum: name=git state=installed
+  yum: name=git state=latest
 
 - name: install epel
   shell: amazon-linux-extras install epel
