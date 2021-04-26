@@ -1,0 +1,8 @@
+---
+- name: install ruby dependency library
+  yum: name={{ items }} state=latest
+  with_items:
+   - gcc
+   - openssl-devel
+   - readline-devel
+   - zlib-devel
