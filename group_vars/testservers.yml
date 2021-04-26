@@ -1,1 +1,3 @@
 env: "Jenkins exec-ansible job"
+
+rbenv_path: "/usr/local/bin/.rbenv"
