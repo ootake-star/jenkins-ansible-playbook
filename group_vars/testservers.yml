@@ -1,1 +1,1 @@
-env: "hosts"
+env: "Jenkins exec-ansible job"
