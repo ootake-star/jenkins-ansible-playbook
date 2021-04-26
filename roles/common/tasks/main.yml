@@ -3,6 +3,6 @@
   become: yes
   yum: name=git state=installed
 
-  name: install epel
+- name: install epel
   become: yes
   shell: amazon-linux-extras install epel
