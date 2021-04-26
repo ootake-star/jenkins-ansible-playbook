@@ -1,0 +1,7 @@
+---
+- hosts: testservers
+  become: yes
+  roles:
+    - common
+    - nginx
+    # - ruby

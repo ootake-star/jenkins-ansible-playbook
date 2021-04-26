@@ -1,0 +1,8 @@
+---
+- name: install nginx
+  become: yes
+  yum: name=nginx state=installed
+
+  name: nginx start
+  become: yes
+  service: name=nginx state=started enabled=yes
