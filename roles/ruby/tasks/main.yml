@@ -8,13 +8,13 @@
    - zlib-devel
 
 - name: rbenvがインストール済みか確認
-  shell: {{ rbenv_path }}/bin/rbenv --version
+  shell: "{{ rbenv_path }}/bin/rbenv --version"
   register: rbenv_exists
   changed_when: False
   ignore_errors: yes
 
 - name: rbenvが未インストールならrbenvをインストール
   git:
-    repo: https://github.com/sstephenson/rbenv.git
-    dest: {{ rbenv_path }}
-  when: rbenv_exsits is failed
+   repo: https://github.com/sstephenson/rbenv.git
+   dest: "{{ rbenv_path }}"
+  when: rbenv_exists is failed
