@@ -18,3 +18,11 @@
    repo: https://github.com/sstephenson/rbenv.git
    dest: "{{ rbenv_path }}"
   when: rbenv_exists is failed
+
+
+- name: ruby-buildをインストール
+  git:
+    repo: https://github.com/sstephenson/ruby-build.git
+    dest: "{{ rbenv_path }}/plugins/ruby-build"
+  when: rbenv_exists is failed
+
