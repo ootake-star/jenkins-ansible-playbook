@@ -26,3 +26,9 @@
     dest: "{{ rbenv_path }}/plugins/ruby-build"
   when: rbenv_exists is failed
 
+- name: Edit bashrc
+  template:
+    src: roles/ruby/templates/rbenv_system.sh.j2
+    dest: /etc/profile.d/rbenv.sh
+    owner: ec2-user
+    group: ec2-user
