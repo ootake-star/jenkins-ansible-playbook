@@ -1,7 +1,6 @@
 ---
 - hosts: testservers
   become: yes
-  connection: local
   roles:
     - common
     - nginx
