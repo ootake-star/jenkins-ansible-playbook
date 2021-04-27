@@ -1,3 +1,4 @@
 env: "Jenkins exec-ansible job"
 
 rbenv_path: "/usr/local/bin/.rbenv"
+ruby_version: "2.7.3"
