@@ -7,33 +7,19 @@
    - readline-devel
    - zlib-devel
 
-# - name: rbenvがインストール済みか確認
-#   shell: "{{ rbenv_path }}/bin/rbenv --version"
-#   register: rbenv_exists
-#   changed_when: False
-#   ignore_errors: yes
-
 - name: rbenvをインストール
   git:
    repo: https://github.com/sstephenson/rbenv.git
    dest: "{{ rbenv_path }}"
-
 
 - name: ruby-buildをインストール
   git:
     repo: https://github.com/sstephenson/ruby-build.git
     dest: "{{ rbenv_path }}/plugins/ruby-build"
 
-# - name: Edit bashrc
-#   template:
-#     src: roles/ruby/templates/rbenv_system.sh.j2
-#     dest: /etc/profile.d/rbenv.sh
-#     owner: ec2-user
-#     group: ec2-user
-
 - name: bash_profileの編集
   blockinfile:
-    dest: /home/ec2-user/.bash_profile
+    dest: ~/.bash_profile
     create: yes
     insertafter: EOF
     content: |
@@ -43,3 +29,6 @@
 
 - name: rubyのインストール
   shell: bash -lc "rbenv install {{ ruby_version }}"
+
+- name: rbenv global設定
+  shell: bash -lc "rbenv global {{ ruby_version }}"
