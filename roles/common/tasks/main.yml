@@ -3,4 +3,5 @@
   yum: name=git state=latest
 
 - name: install epel
-  shell: amazon-linux-extras install epel
+  yum: name=epel-release state=installed
+  # shell: amazon-linux-extras install epel
