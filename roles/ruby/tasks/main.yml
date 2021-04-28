@@ -1,6 +1,5 @@
 ---
 - name: 依存ライブラリのインストール
-  become: yes
   yum: name={{ item }} state=latest
   with_items:
    - gcc

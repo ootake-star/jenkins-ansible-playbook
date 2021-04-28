@@ -1,11 +1,9 @@
 ---
 - name: install nginx
-  become: yes
   yum: name=nginx state=latest
 
 - name: replace index.html
   template: src=index.html.j2 dest=/usr/share/nginx/html/index.html
 
 - name: nginx start
-  become: yes
   service: name=nginx state=started enabled=yes
