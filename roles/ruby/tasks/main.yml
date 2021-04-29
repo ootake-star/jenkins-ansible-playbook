@@ -28,7 +28,7 @@
       eval "$(rbenv init -)"
 
 - name: rubyのインストール
-  shell: bash -lc "rbenv install -y {{ ruby_version }}"
+  shell: bash -lc "rbenv install -s {{ ruby_version }}"
 
 - name: rbenv global設定
   shell: bash -lc "rbenv global {{ ruby_version }}"
